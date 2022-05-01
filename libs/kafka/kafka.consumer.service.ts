@@ -3,7 +3,7 @@ import { ClientKafka } from '@nestjs/microservices';
 import * as config from 'config';
 
 @Injectable()
-export class KafkaClientService extends ClientKafka implements OnModuleInit {
+export class KafkaConsumerService extends ClientKafka implements OnModuleInit {
   constructor() {
     super({
       client: {
@@ -18,9 +18,9 @@ export class KafkaClientService extends ClientKafka implements OnModuleInit {
     try {
       await this.connect();
 
-      console.log('Kafka Client is connected.');
+      console.log('Kafka Consumer is connected.');
     } catch (error) {
-      console.error('Failed to connect Kafka Service', error.stack);
+      console.error('Failed to connect Kafka Consumer', error.stack);
     }
   }
 }
