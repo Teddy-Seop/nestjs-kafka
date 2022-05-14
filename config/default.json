@@ -1,0 +1,7 @@
+{
+  "kafka": {
+    "clientId": "test-client",
+    "brokers": ["localhost:9092"],
+    "connectionTimeout": "3000"
+  }
+}
