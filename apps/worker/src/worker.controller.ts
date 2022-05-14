@@ -13,11 +13,11 @@ export class WorkerController implements OnModuleInit {
   ) {}
 
   public async onModuleInit(): Promise<void> {
-    const client = this.kafkaConsumerFactoryService.get();
-    client.subscribeToResponseOf('test');
-    console.log('Client is connecting...');
-    await client.connect();
-    console.log('Client connected successfully');
+    const consumer = this.kafkaConsumerFactoryService.get();
+    consumer.subscribeToResponseOf('test');
+    console.log('Consumer is connecting...');
+    await consumer.connect();
+    console.log('Consumer connected successfully');
   }
 
   @MessagePattern('test')
