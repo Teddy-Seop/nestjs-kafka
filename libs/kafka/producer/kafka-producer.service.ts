@@ -1,7 +1,9 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { Kafka } from '@nestjs/microservices/external/kafka.interface';
 import * as config from 'config';
-import { IKafkaEvent } from './kafka.interface';
+
+import { Kafka } from 'kafkajs';
+
+import { IKafkaEvent } from '../kafka.interface';
 
 @Injectable()
 export class KafkaProducerService implements OnModuleInit {
