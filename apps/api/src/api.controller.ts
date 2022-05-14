@@ -3,10 +3,11 @@ import { ApiService } from './api.service';
 
 @Controller()
 export class ApiController {
-  constructor(private readonly apiService: ApiService) {}
+  constructor(private readonly service: ApiService) {}
 
   @Get()
-  getHello(): string {
-    return this.apiService.getHello();
+  public async publish(): Promise<boolean> {
+    await this.service.publish();
+    return true;
   }
 }
