@@ -29,6 +29,7 @@ export class ApiService {
       };
 
       await this.kafkaProducerService.publish(event);
+      await this.cacheService.set(cacheKey, String(partition));
       console.log('success');
     } catch (error) {
       throw error;

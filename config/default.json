@@ -3,5 +3,9 @@
     "clientId": "test-client",
     "brokers": ["localhost:9092"],
     "connectionTimeout": "3000"
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 3306
   }
 }
