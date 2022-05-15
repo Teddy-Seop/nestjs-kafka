@@ -15,6 +15,7 @@ export class WorkerController implements OnModuleInit {
   public async onModuleInit(): Promise<void> {
     const consumer = this.kafkaConsumerFactoryService.get();
     consumer.subscribeToResponseOf('test');
+
     console.log('Consumer is connecting...');
     await consumer.connect();
     console.log('Consumer connected successfully');

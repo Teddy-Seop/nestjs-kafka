@@ -10,7 +10,9 @@ export class KafkaProducerService implements OnModuleInit {
   readonly #producer = new Kafka({
     clientId: config.get<string>('kafka.clientId'),
     brokers: config.get<string[]>('kafka.brokers'),
-  }).producer();
+  }).producer({
+    idempotent: true,
+  });
 
   public async onModuleInit(): Promise<void> {
     try {
