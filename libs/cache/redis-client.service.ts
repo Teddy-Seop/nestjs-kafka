@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import * as config from 'config';
-import Redis from 'ioredis';
+import * as Redis from 'ioredis';
 
 @Injectable()
-export class RedisClientService extends Redis {
+export class RedisClientService extends Redis.Cluster {
   constructor() {
-    super(config.get<number>('redis.port'), config.get<string>('redis.host'));
+    super([{ host: 'localhost', port: 6300 }]);
 
     this.client('SETNAME', 'NEST-KAFKA-CACHE');
   }
