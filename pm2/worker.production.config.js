@@ -7,9 +7,7 @@ module.exports = {
       instances: '3',
       merge_logs: true,
       watch: false,
-      env: {
-        NODE_ENV: 'production',
-      },
+      env: {},
     },
   ],
 };

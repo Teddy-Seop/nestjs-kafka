@@ -23,7 +23,7 @@ export class ApiService {
           {
             key: 'test key',
             value: 'tets value',
-            partition,
+            partition: Math.floor(Math.random() * 3),
           },
         ],
       };
