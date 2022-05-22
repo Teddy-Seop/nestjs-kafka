@@ -6,6 +6,6 @@
   },
   "redis": {
     "host": "localhost",
-    "port": 3306
+    "port": 6300
   }
 }
